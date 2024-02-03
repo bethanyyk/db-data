@@ -49,44 +49,21 @@ const linedata = {
   }]
 };
 
-const linedata2 = {
-  labels: labels,
-  datasets: [{
-    label: 'COA - Financial Aid',
-    data:[5363,	6316,	6761,	7089,	7319,	7789,	8664,	10292,	12320,	13693,	14189,	14524,	15010,	14999,	15182,	15869,	15670,	15616,	14597,	15147,	16647],
-    backgroundColor: colors[8],
-    borderColor: colors[8],
-    borderWidth: 1,
-    yAxisID: 'y2',
-    type: 'line'
-  }]
-};
-
 const options = {
   responsive: true,
   scales: {
     x: {
       stacked: true,
-      title: {
+      title:{
         display: true,
         text: 'Year'
       }
     },
     y: {
       stacked: true,
-      title: {
+      title:{
         display: true,
         text: 'Dollars($)'
-      }
-    },
-    y2: {
-      position: 'right',
-      title: {
-        display: true,
-        text: 'Dollars($)'
-      },
-      grid: {
-        display: false
       }
     }
   },
@@ -104,5 +81,4 @@ const chart = new Chart(ctxBAR, {
   });
 
 chart.data.datasets.push(...linedata.datasets);
-chart.data.datasets.push(...linedata2.datasets);
 chart.update();
